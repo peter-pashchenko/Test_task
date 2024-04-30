@@ -83,7 +83,7 @@ func main() {
 		result = number1 + number2
 	case 1:
 		if rome_check_1 && number2 > number1 {
-			fmt.Println("error negatives not possible in rome numbers")
+			panic(errors.New("error negatives not possible in rome numbers"))
 		}
 		result = number1 - number2
 	case 2:
