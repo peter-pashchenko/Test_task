@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"strings"
 )
@@ -23,16 +24,16 @@ func main() {
 		if strings.Contains(input, znaki[i]) {
 			numbers = strings.Split(input, znaki[i])
 			if len(numbers) > 2 {
-				fmt.Println("error too many arguments")
-				return
+				//fmt.Println("error too many arguments")
+				panic(errors.New("error too many arguments"))
 			}
 			znak1 = i
 			// fmt.Println(numbers, znak1)
 			break
 		}
 		if (strings.Contains(input, arabic[i]) == false) && (i == (len(znaki) - 1)) {
-			fmt.Println("error  in sign")
-			return
+			//fmt.Println("error  in sign")
+			panic(errors.New("error  in sign"))
 		}
 
 	}
@@ -47,8 +48,9 @@ func main() {
 		}
 	}
 	if rome_check_1 != rome_check_2 {
-		fmt.Println("error different systems")
-		return
+		// fmt.Println("error different systems")
+		panic(errors.New("error different systems"))
+
 	}
 
 	for j := 0; j < 10; j++ {
@@ -58,6 +60,11 @@ func main() {
 		case numbers[0] == rome[j]:
 			number1 = j + 1
 		}
+		if number1 == 0 {
+			// fmt.Println("")
+			panic(errors.New("out of range number was entered"))
+		}
+
 	}
 	for j := 0; j < 10; j++ {
 		switch {
@@ -65,6 +72,10 @@ func main() {
 			number2 = j + 1
 		case numbers[1] == rome[j]:
 			number2 = j + 1
+		}
+		if number2 == 0 {
+			// fmt.Println("out of range number was entered")
+			panic(errors.New("out of range number was entered"))
 		}
 	}
 	switch znak1 {
