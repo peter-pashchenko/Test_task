@@ -47,6 +47,22 @@ func main() {
 			rome_check_2 = true
 		}
 	}
+
+	for j := 0; j < 10; j++ {
+		switch {
+		case numbers[0] == arabic[j]:
+			number1 = j + 1
+			break
+		case numbers[0] == rome[j]:
+			number1 = j + 1
+			break
+		}
+	}
+	if (number1 == 0) || (number2 == 0) {
+	}
+	{
+		panic(errors.New("wrong type of numbers were entered"))
+	}
 	if rome_check_1 != rome_check_2 {
 		// fmt.Println("error different systems")
 		panic(errors.New("error different systems"))
@@ -55,29 +71,15 @@ func main() {
 
 	for j := 0; j < 10; j++ {
 		switch {
-		case numbers[0] == arabic[j]:
-			number1 = j + 1
-		case numbers[0] == rome[j]:
-			number1 = j + 1
-		}
-		if number1 == 0 {
-			// fmt.Println("")
-			panic(errors.New("out of range number was entered"))
-		}
-
-	}
-	for j := 0; j < 10; j++ {
-		switch {
 		case numbers[1] == arabic[j]:
 			number2 = j + 1
+			break
 		case numbers[1] == rome[j]:
 			number2 = j + 1
-		}
-		if number2 == 0 {
-			// fmt.Println("out of range number was entered")
-			panic(errors.New("out of range number was entered"))
+			break
 		}
 	}
+
 	switch znak1 {
 	case 0:
 		result = number1 + number2
