@@ -47,6 +47,7 @@ func main() {
 			rome_check_2 = true
 		}
 	}
+	fmt.Println(numbers, number1, number2)
 
 	for j := 0; j < 10; j++ {
 		switch {
@@ -57,16 +58,6 @@ func main() {
 			number1 = j + 1
 			break
 		}
-	}
-	if (number1 == 0) || (number2 == 0) {
-	}
-	{
-		panic(errors.New("wrong type of numbers were entered"))
-	}
-	if rome_check_1 != rome_check_2 {
-		// fmt.Println("error different systems")
-		panic(errors.New("error different systems"))
-
 	}
 
 	for j := 0; j < 10; j++ {
@@ -79,7 +70,17 @@ func main() {
 			break
 		}
 	}
+	//fmt.Println(numbers, number1, number2)
 
+	if (number1 == 0) || (number2 == 0) {
+		panic(errors.New("wrong type of numbers were entered "))
+	}
+
+	if rome_check_1 != rome_check_2 {
+		// fmt.Println("error different systems")
+		panic(errors.New("error different systems"))
+
+	}
 	switch znak1 {
 	case 0:
 		result = number1 + number2
